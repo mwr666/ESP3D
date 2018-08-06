@@ -30,7 +30,7 @@
 #include "FS.h"
 #include "SPIFFS.h"
 #define WIFI_NONE_SLEEP WIFI_PS_NONE
-#define WIFI_MODEM_SLEEP WIFI_PS_MODEM
+#define WIFI_MODEM_SLEEP WIFI_PS_MAX_MODEM
 #define WIFI_PHY_MODE_11B WIFI_PROTOCOL_11B
 #define WIFI_PHY_MODE_11G WIFI_PROTOCOL_11B | WIFI_PROTOCOL_11G
 #define WIFI_PHY_MODE_11N WIFI_PROTOCOL_11B | WIFI_PROTOCOL_11G | WIFI_PROTOCOL_11N
@@ -47,8 +47,6 @@
 #define SPIFFS_FILE_READ FILE_READ
 #define SD_FILE_WRITE FILE_WRITE
 #define SPIFFS_FILE_WRITE FILE_WRITE
-
-extern HardwareSerial Serial2;
 #else
 #define FS_DIR fs::Dir
 #define FS_FILE fs::File
@@ -186,7 +184,7 @@ extern "C" {
 #endif
 #include "wificonf.h"
 //version and sources location
-#define FW_VERSION "0.9.102"
+#define FW_VERSION "1.0"
 #define REPOSITORY "https://github.com/luc-github/ESP3D"
 
 typedef enum {
